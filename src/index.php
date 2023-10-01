@@ -18,8 +18,8 @@
             <option value="name-desc">Naam (Z-A)</option>
         </select>
         
-        <a href="csv.php" class="export-button" >Exporteer naar CSV</a>
-        <a href="pdf.php" class="export-button" >Exporteer naar PDF</a>
+        <a href="csv.php">Exporteer naar CSV</a>
+        <a href="pdf.php">Exporteer naar PDF</a>
 
     </div>
 
@@ -57,11 +57,12 @@
                 echo '<div class="student-card">';
                 echo '<h2>' . $row['voornaam'] . ' ' . $row['achternaam'] . '</h2>';
                 echo '<div class="student-details">';
-                echo '<p>Email: <a href="mailto:' . $row['email'] . '">' . $row['email'] . '</a></p>';
+                echo '<p>Email: <a href="send_email.php?email=' . urlencode($row['email']) . '&name=' . urlencode($row['voornaam']) . '">' . $row['email'] . '</a></p>';
                 echo '<p>Telefoonnummer: ' . $row['telefoonnummer'] . '</p>';
                 echo '<img src="image/' . $row['foto'] . '" alt="Student Foto">';
                 echo '</div>';
                 echo '</div>';
+
             }
         } else {
             echo "Geen studenten gevonden.";
