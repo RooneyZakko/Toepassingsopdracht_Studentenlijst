@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    
     // Functie om de studentdetails te tonen of te verbergen
     function toggleDetails(event) {
         const card = event.currentTarget;
@@ -10,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
             details.style.display = 'none';
         }
     }
+
+    
 
     const studentCards = document.querySelectorAll('.student-card');
     studentCards.forEach(card => {
@@ -55,4 +59,11 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('.products').appendChild(card);
         });
     }
+
+
+
+    
+
+
+
 });

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylee.css">
     <title>Studenten lijst</title>
 </head>
 <body>
@@ -34,12 +34,12 @@
        // Laad de .env-variabelen
       
        
-         $servername = $_ENV['DB_HOST'];
+         $host = $_ENV['DB_HOST'];
         $username = $_ENV['DB_USER'];
         $password = $_ENV['DB_PASS'];
         $dbname = $_ENV['DB_NAME'];
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = new mysqli($host, $username, $password, $dbname);
 
         if ($conn->connect_error) {
             die("Connectie mislukt: " . $conn->connect_error);
@@ -59,6 +59,8 @@
                 echo '<div class="student-details">';
                 echo '<p>Email: <a href="send_email.php?email=' . urlencode($row['email']) . '&name=' . urlencode($row['voornaam']) . '">' . $row['email'] . '</a></p>';
                 echo '<p>Telefoonnummer: ' . $row['telefoonnummer'] . '</p>';
+                echo '<p>  Voor klachten: <a href="a.php">' . 'klick hier' . ' </a></p>';
+
                 echo '<img src="image/' . $row['foto'] . '" alt="Student Foto">';
                 echo '</div>';
                 echo '</div>';
